@@ -6,7 +6,7 @@ ollama
 pdf2image
 pdfminer-six
 pillow_heif
-opencv-python
+opencv-python-headless
 langchain_community
 langchain_core
 chromadb
