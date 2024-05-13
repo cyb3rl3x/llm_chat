@@ -3,10 +3,10 @@ langchain
 unstructured
 unstructured[all-docs]
 ollama
+opencv-python-headless
 pdf2image
 pdfminer-six
 pillow_heif
-opencv-python-headless
 langchain_community
 langchain_core
 chromadb==0.3.29

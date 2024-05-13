@@ -2,6 +2,12 @@
 # coding: utf-8
 
 # Importação do Streamlit
+import subprocess
+
+# Executando o comando de forma programática
+subprocess.run(["ollama", "pull", "cnmoro/mistral_7b_portuguese:q2_K"], check=True)
+
+
 import time
 import streamlit as st
 
@@ -77,7 +83,7 @@ if st.button("Processar documentos"):
                                                  prompt=prompt_template)
         
         template = """Responda a questão baseado somente no seguinte contexto:{context}"""
-        
+
         prompt = ChatPromptTemplate.from_template(template)
 
         chain = (
