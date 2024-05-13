@@ -2,6 +2,7 @@
 # coding: utf-8
 
 # Importação do Streamlit
+import time
 import streamlit as st
 
 # Importações necessárias para o processamento de documentos
@@ -23,6 +24,9 @@ from langchain.retrievers.multi_query import MultiQueryRetriever
 
 # Definição do diretório dos PDFs
 pdf_folder_path = "biblioteca/"
+
+st.write(os.listdir(pdf_folder_path))
+print(os.listdir(pdf_folder_path))
 
 # Carregamento e processamento de documentos
 def load_and_process_documents():
@@ -55,3 +59,23 @@ if st.button("Processar documentos"):
     st.write("Processamento completo e vector database configurado.")
 
 # Interface adicional pode ser adicionada aqui para interações subsequentes com o usuário
+
+# Adicionando interface para perguntas do usuário
+    question = st.text_input("Digite sua pergunta:")
+    if st.button("Enviar pergunta"):
+        # Configuração do modelo de chat
+        local_model = 'cnmoro/mistral_7b_portuguese:q2_K'
+        llm = ChatOllama(model=local_model)
+        
+        # Template e recuperação de contexto
+        prompt_template = PromptTemplate(
+            input_variables=['question'],
+            template="""Você é um modelo de linguagem de IA. Sua tarefa é gerar respostas para a pergunta dada usando os documentos recuperados."""
+        )
+        retriever = MultiQueryRetriever.from_llm(vector_db.as_retriever(), llm, prompt=prompt_template)
+        
+        # Execução do modelo de chat
+        response = retriever.invoke(question)
+        st.write("Resposta:")
+        st.write(response)
+        time.sleep(100)
