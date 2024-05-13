@@ -9,6 +9,6 @@ pillow_heif
 opencv-python-headless
 langchain_community
 langchain_core
+sqlite3
 chromadb
 langchain-text-splitters
-sqlite3
