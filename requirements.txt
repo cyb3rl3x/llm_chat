@@ -9,5 +9,5 @@ pillow_heif
 opencv-python-headless
 langchain_community
 langchain_core
-chromadb=0.3.29
+chromadb==0.3.29
 langchain-text-splitters
