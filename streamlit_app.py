@@ -16,7 +16,7 @@ uploaded_files = st.file_uploader("Carregue os arquivos PDF aqui", accept_multip
 model_name = 'cnmoro/mistral_7b_portuguese:q2_K'
 llm = ChatOllama(model=model_name)
 
-print("ARQUIVOS CARREGADOS:"uploaded_files)
+print(f"ARQUIVOS CARREGADOS: {uploaded_files}")
 
 # Carregamento e processamento dos documentos
 all_documents = []
