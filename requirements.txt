@@ -11,4 +11,4 @@ langchain_community
 langchain_core
 chromadb
 langchain-text-splitters
-pysqlite3 
+sqlite3
