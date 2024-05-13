@@ -72,10 +72,13 @@ if st.button("Processar documentos"):
             input_variables=['question'],
             template="""Você é um modelo de linguagem de IA. Sua tarefa é gerar respostas para a pergunta dada usando os documentos recuperados."""
         )
-        retriever = MultiQueryRetriever.from_llm(vector_db.as_retriever(), llm, prompt=prompt_template)
+        retriever = MultiQueryRetriever.from_llm(vector_db.as_retriever(), 
+                                                 llm, 
+                                                 prompt=prompt_template)
         
         # Execução do modelo de chat
         response = retriever.invoke(question)
+        print(f'RESPOSTA: {response}')
         st.write("Resposta:")
         st.write(response)
         time.sleep(100)
