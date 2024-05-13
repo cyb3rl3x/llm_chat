@@ -2,9 +2,12 @@ streamlit
 langchain
 unstructured
 unstructured[all-docs]
+ollama
 pdf2image
 pdfminer-six
 pillow_heif
 opencv-python
 langchain_community
 langchain_core
+chromadb
+langchain-text-splitters
