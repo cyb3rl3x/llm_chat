@@ -76,8 +76,19 @@ if st.button("Processar documentos"):
                                                  llm, 
                                                  prompt=prompt_template)
         
+        template = """Responda a questão baseado somente no seguinte contexto:{context}"""
+        
+        prompt = ChatPromptTemplate.from_template(template)
+
+        chain = (
+            {"context":retriever, "question":RunnablePassthrough()}
+            |prompt
+            |llm
+            |StrOutputParser()
+        )
+
         # Execução do modelo de chat
-        response = retriever.invoke(question)
+        response = chain.invoke(question)
         print(f'RESPOSTA: {response}')
         st.write("Resposta:")
         st.write(response)
