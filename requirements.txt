@@ -7,7 +7,6 @@ pdf2image
 pdfminer-six
 pillow_heif
 opencv-python-headless
-libgl1
 langchain_community
 langchain_core
 chromadb
