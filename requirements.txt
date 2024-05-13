@@ -1,6 +1,7 @@
 streamlit
 langchain
 unstructured
+unstructured[all-docs]
 pdf2image
 pdfminer-six
 pillow_heif 
