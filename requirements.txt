@@ -1,6 +1,7 @@
 streamlit
 langchain
 unstructured
-pdf2image 
+pdf2image
+pdfminer 
 langchain_community
 langchain_core
