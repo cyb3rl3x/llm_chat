@@ -1,5 +1,6 @@
 streamlit
 langchain
-unstructured 
+unstructured
+pdf2image 
 langchain_community
 langchain_core
