@@ -22,6 +22,7 @@ print(f"ARQUIVOS CARREGADOS: {uploaded_files}")
 all_documents = []
 if uploaded_files:
     for uploaded_file in uploaded_files:
+        print(f'ARQUIVO {uploaded_file}')
         loader = UnstructuredPDFLoader(uploaded_file)
         document = loader.load()
         all_documents.append(document)
